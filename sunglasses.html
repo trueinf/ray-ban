@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray-Ban Meta Sunglasses | Smart Eyewear</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span class="truck-icon">🚚</span>
+            <span>Ray-Ban® Official Store India : Free Shipping</span>
+        </div>
+    </div>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="sunglasses.html" class="logo-link">
+                    <div class="logo-section">
+                        <div class="logo-red">RAY-BAN</div>
+                        <div class="logo-tagline">GENUINE SINCE 1937</div>
+                    </div>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="sunglasses.html" class="active">SUNGLASSES</a></li>
+                    <li><a href="eyeglasses.html">EYEGLASSES</a></li>
+                    <li><a href="index.html">AI GLASSES</a></li>
+                    <li><a href="index.html#products">NEW ARRIVALS</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="icon-btn" aria-label="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn" aria-label="Wishlist">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn" aria-label="Cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="icon-btn" aria-label="Profile">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products-section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>RAY-BAN META SUNGLASSES</h1>
+                    <p>Smart sunglasses with tinted lenses for style and protection</p>
+                </div>
+
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="gen2">Gen 2</button>
+                    <button class="filter-btn" data-filter="gen1">Gen 1</button>
+                    <button class="filter-btn" data-filter="aviator">Aviator</button>
+                    <button class="filter-btn" data-filter="wayfarer">Wayfarer</button>
+                    <button class="filter-btn" data-filter="round">Round</button>
+                </div>
+
+                <div class="products-grid" id="productsGrid">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Ray-Ban Meta</h4>
+                    <p>Experience the future of smart eyewear</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="index.html#products">Gen 2 Glasses</a></li>
+                        <li><a href="index.html#products">Gen 1 Glasses</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ray-Ban Meta. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body" id="modalBody">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sunglassesProducts = products.filter(p => p.type === 'sunglasses');
+            window.currentProducts = sunglassesProducts.length > 0 ? sunglassesProducts : products;
+            init();
+        });
+    </script>
+    
+    <elevenlabs-convai agent-id="agent_4401kgkztpy8fvc9a1v2sz559g6f"></elevenlabs-convai>
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</body>
+</html>
