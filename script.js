@@ -337,4 +337,95 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-document.addEventListener('DOMContentLoaded', init);
+// Contact button functionality
+let widgetOpen = false;
+
+function setupContactButton() {
+    const contactBtn = document.getElementById('contactBtn');
+    
+    if (contactBtn) {
+        contactBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const topWidget = document.querySelector('elevenlabs-convai.top-right-widget');
+            if (topWidget) {
+                if (widgetOpen) {
+                    // Close the widget
+                    topWidget.classList.remove('show-widget');
+                    topWidget.style.display = 'none';
+                    widgetOpen = false;
+                } else {
+                    // Show the widget dialog
+                    topWidget.classList.add('show-widget');
+                    positionTopWidget();
+                    widgetOpen = true;
+                }
+            }
+        });
+        
+        // Close widget when clicking outside
+        document.addEventListener('click', (e) => {
+            const topWidget = document.querySelector('elevenlabs-convai.top-right-widget');
+            const contactBtn = document.getElementById('contactBtn');
+            
+            if (!topWidget || !widgetOpen) return;
+            
+            // Check if click is outside both the widget and contact button
+            const clickedOnWidget = topWidget.contains(e.target);
+            const clickedOnContactBtn = contactBtn && contactBtn.contains(e.target);
+            
+            if (!clickedOnWidget && !clickedOnContactBtn) {
+                topWidget.classList.remove('show-widget');
+                topWidget.style.display = 'none';
+                widgetOpen = false;
+            }
+        });
+    }
+}
+
+// Position top-right ElevenLabs widget
+function positionTopWidget() {
+    const topWidget = document.querySelector('elevenlabs-convai.top-right-widget');
+    if (topWidget) {
+        topWidget.style.cssText = `
+            display: block !important;
+            position: fixed !important;
+            top: 80px !important;
+            right: 100px !important;
+            bottom: auto !important;
+            left: auto !important;
+            z-index: 9999 !important;
+            overflow: visible !important;
+        `;
+        
+        // Also try to style shadow DOM elements
+        const shadowRoot = topWidget.shadowRoot;
+        if (shadowRoot) {
+            // Check if style already added
+            if (!shadowRoot.querySelector('#custom-position-style')) {
+                const styleEl = document.createElement('style');
+                styleEl.id = 'custom-position-style';
+                styleEl.textContent = `
+                    :host {
+                        position: fixed !important;
+                        top: 80px !important;
+                        right: 100px !important;
+                        bottom: auto !important;
+                        left: auto !important;
+                        overflow: visible !important;
+                    }
+                    div, * {
+                        overflow: visible !important;
+                    }
+                `;
+                shadowRoot.appendChild(styleEl);
+            }
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    init();
+    setupContactButton();
+});

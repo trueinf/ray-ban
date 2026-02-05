@@ -198,6 +198,83 @@ body {
     display: flex;
 }
 
+.contact-btn {
+    position: relative;
+}
+
+.contact-tooltip {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    z-index: 1001;
+    pointer-events: none;
+}
+
+.contact-tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    right: 12px;
+    border: 6px solid transparent;
+    border-bottom-color: var(--primary-color);
+}
+
+.contact-btn:hover .contact-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.contact-btn.active {
+    color: var(--rayban-red);
+}
+
+.contact-btn.active svg {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ElevenLabs top-right widget - hidden by default, triggered by contact icon */
+elevenlabs-convai.top-right-widget {
+    display: none !important;
+}
+
+elevenlabs-convai.top-right-widget.show-widget {
+    display: block !important;
+    position: fixed !important;
+    top: 80px !important;
+    right: 100px !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 9999 !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* ElevenLabs widget without class uses default bottom-right positioning */
+
 .landing-section {
     padding: 4rem 0 6rem;
     background: var(--secondary-color);
