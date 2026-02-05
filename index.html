@@ -3,173 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ray-Ban Meta Glasses | Smart Eyewear</title>
+    <title>Ray-Ban Meta | AI Glasses</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top-bar">
-        <div class="top-bar-content">
-            <span class="truck-icon">🚚</span>
-            <span>Ray-Ban® Official Store India : Free Shipping</span>
-        </div>
-    </div>
+    <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <div class="nav-container">
-                <a href="sunglasses.html" class="logo-link">
-                    <div class="logo-section">
-                        <div class="logo-red">RAY-BAN</div>
-                        <div class="logo-tagline">GENUINE SINCE 1937</div>
-                    </div>
+            <div class="nav-left">
+                <a href="index.html" class="logo">
+                    <svg width="100" height="20" viewBox="0 0 100 20" fill="currentColor">
+                        <text x="0" y="15" font-size="14" font-weight="700">∞ Meta</text>
+                    </svg>
                 </a>
                 <ul class="nav-menu">
-                    <li><a href="sunglasses.html">SUNGLASSES</a></li>
-                    <li><a href="eyeglasses.html">EYEGLASSES</a></li>
-                    <li><a href="index.html">AI GLASSES</a></li>
-                    <li><a href="index.html#products">NEW ARRIVALS</a></li>
+                    <li><a href="index.html" class="active">AI glasses</a></li>
+                    <li><a href="#">Meta Quest</a></li>
+                    <li><a href="#">Apps and games</a></li>
                 </ul>
-                <div class="nav-actions">
-                    <button class="icon-btn" aria-label="Search">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                    </button>
-                    <button class="icon-btn" aria-label="Cart">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
-                        <span class="cart-count">0</span>
-                    </button>
-                    <button class="icon-btn" aria-label="Profile">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </button>
-                    <button class="icon-btn contact-btn" id="contactBtn" aria-label="Contact Us">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                        </svg>
-                        <span class="contact-tooltip" id="contactTooltip">Contact Customer Support</span>
-                    </button>
-                </div>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="nav-link">Explore Meta</a>
+                <a href="#" class="nav-link">Support</a>
+                <button class="icon-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="Region">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="region-text">IN</span>
+                </button>
+                <button class="icon-btn" aria-label="Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="Profile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button class="icon-btn contact-btn" id="contactBtn" aria-label="Contact Us">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span class="contact-tooltip" id="contactTooltip">Contact Customer Support</span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="landing-section">
-            <div class="container">
-                <h1 class="page-title">RAY-BAN META GLASSES (GEN 1)</h1>
-                <div class="products-showcase">
-                    <div class="showcase-item" data-page="sunglasses.html">
-                        <div class="glasses-container bg-gradient-blue">
-                            <div class="glasses-product sunglasses-gradient">
-                                <div class="glasses-frame-black">
-                                    <div class="temple-logo">RAY-BAN</div>
-                                </div>
-                                <div class="camera-dot"></div>
-                            </div>
-                            <div class="reflection"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-prompt">
+                <span class="prompt-text">Hey Meta, what's a cool way to capture this view?</span>
+                <span class="prompt-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="4" y="6" width="2" height="12" rx="1"/>
+                        <rect x="8" y="4" width="2" height="16" rx="1"/>
+                        <rect x="12" y="8" width="2" height="8" rx="1"/>
+                        <rect x="16" y="5" width="2" height="14" rx="1"/>
+                        <rect x="20" y="7" width="2" height="10" rx="1"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="hero-branding">
+                <span class="rayban-script">Ray-Ban</span>
+                <span class="divider">|</span>
+                <span class="meta-logo">∞ Meta</span>
+            </div>
+        </div>
+        <h1 class="hero-title">Iconic style meets Meta AI</h1>
+        <div class="hero-background"></div>
+        <button class="video-control" aria-label="Pause video">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="6" y="4" width="4" height="16"/>
+                <rect x="14" y="4" width="4" height="16"/>
+            </svg>
+        </button>
+    </section>
+
+    <!-- Sub Navigation -->
+    <section class="sub-nav">
+        <div class="sub-nav-content">
+            <h2 class="sub-nav-title">AI glasses | Ray-Ban Meta</h2>
+            <a href="#products" class="btn-primary">Shop all styles</a>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="discover-section" id="products">
+        <div class="container">
+            <h2 class="section-title">Discover the new Ray-Ban Meta</h2>
+            <p class="section-subtitle">Upgrade your style with the no. 1 selling AI glasses, now with longer battery life and improved video quality.</p>
+            
+            <div class="products-grid">
+                <div class="product-card" onclick="showProductDetails('Wayfarer', 'Gen 2', '$329', 'Classic wayfarer style with 12MP camera, Meta AI, and premium audio.')">
+                    <div class="product-image">
+                        <div class="glasses-visual wayfarer-blue">
+                            <div class="lens-left"></div>
+                            <div class="lens-right"></div>
+                            <div class="camera-dot"></div>
                         </div>
-                        <div class="product-label">Sunglasses</div>
                     </div>
-                    <div class="showcase-item" data-page="eyeglasses.html">
-                        <div class="glasses-container bg-gradient-pink">
-                            <div class="glasses-product eyeglasses-clear">
-                                <div class="glasses-frame-black">
-                                    <div class="temple-logo">RAY-BAN</div>
-                                </div>
-                                <div class="camera-dot"></div>
-                            </div>
-                            <div class="reflection"></div>
+                    <p class="product-brand">Ray-Ban Meta</p>
+                    <h3 class="product-name">Wayfarer (Gen 2)</h3>
+                    <button class="btn-secondary" onclick="event.stopPropagation(); showProductDetails('Wayfarer', 'Gen 2', '$329', 'Classic wayfarer style with 12MP camera, Meta AI, and premium audio.')">View Details</button>
+                </div>
+                <div class="product-card" onclick="showProductDetails('Skyler', 'Gen 2', '$329', 'Stylish round frames with 12MP camera, Meta AI, and all-day battery.')">
+                    <div class="product-image">
+                        <div class="glasses-visual skyler-gold">
+                            <div class="lens-left"></div>
+                            <div class="lens-right"></div>
+                            <div class="camera-dot"></div>
                         </div>
-                        <div class="product-label">Eyeglasses</div>
                     </div>
-                    <div class="showcase-item" data-page="sunglasses.html">
-                        <div class="glasses-container bg-gradient-cyan">
-                            <div class="glasses-product sunglasses-green">
-                                <div class="glasses-frame-black">
-                                    <div class="temple-logo">RAY-BAN</div>
-                                </div>
-                                <div class="camera-dot"></div>
-                            </div>
-                            <div class="reflection"></div>
+                    <p class="product-brand">Ray-Ban Meta</p>
+                    <h3 class="product-name">Skyler (Gen 2)</h3>
+                    <button class="btn-secondary" onclick="event.stopPropagation(); showProductDetails('Skyler', 'Gen 2', '$329', 'Stylish round frames with 12MP camera, Meta AI, and all-day battery.')">View Details</button>
+                </div>
+                <div class="product-card" onclick="showProductDetails('Headliner', 'Gen 2', '$329', 'Modern headliner design with 12MP camera, Meta AI, and improved video quality.')">
+                    <div class="product-image">
+                        <div class="glasses-visual headliner-gray">
+                            <div class="lens-left"></div>
+                            <div class="lens-right"></div>
+                            <div class="camera-dot"></div>
                         </div>
-                        <div class="product-label">Sunglasses</div>
                     </div>
+                    <p class="product-brand">Ray-Ban Meta</p>
+                    <h3 class="product-name">Headliner (Gen 2)</h3>
+                    <button class="btn-secondary" onclick="event.stopPropagation(); showProductDetails('Headliner', 'Gen 2', '$329', 'Modern headliner design with 12MP camera, Meta AI, and improved video quality.')">View Details</button>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="products" class="products-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Explore Our Collection</h2>
-                    <p>Discover the perfect pair of smart glasses</p>
+    <!-- Compare Section -->
+    <section class="compare-section">
+        <div class="container">
+            <div class="compare-branding">
+                <span class="rayban-script">Ray-Ban</span>
+                <span class="divider">|</span>
+                <span class="meta-logo">∞ Meta</span>
+            </div>
+            <h2 class="section-title">Choose the best Ray-Ban Meta for you</h2>
+            <a href="#" class="btn-outline">Compare all AI glasses</a>
+            
+            <div class="compare-grid">
+                <div class="compare-card">
+                    <div class="compare-image">
+                        <div class="glasses-visual gen1-black">
+                            <div class="lens-left"></div>
+                            <div class="lens-right"></div>
+                            <div class="camera-dot"></div>
+                        </div>
+                    </div>
+                    <h3 class="compare-name">Gen 1</h3>
                 </div>
-
-                <div class="filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="gen2">Gen 2</button>
-                    <button class="filter-btn" data-filter="gen1">Gen 1</button>
-                    <button class="filter-btn" data-filter="aviator">Aviator</button>
-                    <button class="filter-btn" data-filter="wayfarer">Wayfarer</button>
-                    <button class="filter-btn" data-filter="round">Round</button>
-                </div>
-
-                <div class="products-grid" id="productsGrid">
+                <div class="compare-card">
+                    <span class="new-badge">New</span>
+                    <div class="compare-image">
+                        <div class="glasses-visual gen2-blue">
+                            <div class="lens-left"></div>
+                            <div class="lens-right"></div>
+                            <div class="camera-dot"></div>
+                        </div>
+                    </div>
+                    <h3 class="compare-name">Gen 2</h3>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="features" class="features-section">
-            <div class="container">
-                <h2>Why Choose Ray-Ban Meta?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">📸</div>
-                        <h3>12MP Camera</h3>
-                        <p>Capture photos and videos hands-free with stunning clarity</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎵</div>
-                        <h3>Premium Audio</h3>
-                        <p>Open-ear speakers deliver rich, immersive sound</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🤖</div>
-                        <h3>Meta AI</h3>
-                        <p>Get answers, translations, and more with voice commands</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔋</div>
-                        <h3>All-Day Battery</h3>
-                        <p>Up to 8 hours of continuous use on a single charge</p>
-                    </div>
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">What makes Ray-Ban Meta special</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>12MP Ultra-wide Camera</h3>
+                    <p>Capture photos and 1080p video hands-free with stunning clarity</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Premium Audio</h3>
+                    <p>Open-ear speakers deliver rich, immersive sound for calls and music</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Meta AI Built-in</h3>
+                    <p>Get answers, translations, and more with just your voice</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔋</div>
+                    <h3>All-Day Battery</h3>
+                    <p>Up to 8 hours of use with the charging case</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Ray-Ban Meta</h4>
-                    <p>Experience the future of smart eyewear</p>
-                </div>
-                <div class="footer-section">
                     <h4>Shop</h4>
                     <ul>
-                        <li><a href="#">Gen 2 Glasses</a></li>
-                        <li><a href="#">Gen 1 Glasses</a></li>
+                        <li><a href="#">Ray-Ban Meta</a></li>
+                        <li><a href="#">Meta Quest 3</a></li>
                         <li><a href="#">Accessories</a></li>
                     </ul>
                 </div>
@@ -177,29 +233,59 @@
                     <h4>Support</h4>
                     <ul>
                         <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Order Status</a></li>
                         <li><a href="#">Returns</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect</h4>
+                    <h4>About</h4>
                     <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Ray-Ban Meta. All rights reserved.</p>
+                <p>© 2024 Meta. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <div class="modal" id="productModal">
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-overlay" onclick="closeProductModal()"></div>
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-body" id="modalBody">
+            <button class="modal-close" onclick="closeProductModal()">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <div class="glasses-visual wayfarer-blue" id="modalGlasses">
+                        <div class="lens-left"></div>
+                        <div class="lens-right"></div>
+                        <div class="camera-dot"></div>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <p class="modal-brand">Ray-Ban Meta</p>
+                    <h2 class="modal-name" id="modalName">Wayfarer (Gen 2)</h2>
+                    <p class="modal-price" id="modalPrice">$329</p>
+                    <p class="modal-description" id="modalDesc">Classic wayfarer style with 12MP camera, Meta AI, and premium audio.</p>
+                    <div class="modal-features">
+                        <div class="feature-item">📸 12MP Camera</div>
+                        <div class="feature-item">🤖 Meta AI</div>
+                        <div class="feature-item">🎵 Premium Audio</div>
+                        <div class="feature-item">🔋 8hr Battery</div>
+                    </div>
+                    <button class="btn-primary btn-large">Add to Cart</button>
+                </div>
             </div>
         </div>
     </div>
