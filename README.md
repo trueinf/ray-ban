@@ -8,6 +8,7 @@ A modern, responsive e-commerce website inspired by the Ray-Ban Meta Glasses off
 - **Product Showcase**: Interactive product grid with filtering capabilities
 - **Product Details**: Modal popups with detailed product information
 - **Shopping Cart**: Add products to cart with visual feedback
+- **AI Chatbot**: OpenAI-powered chatbot with vectorized knowledge base from Supabase
 - **Responsive Layout**: Works seamlessly on desktop, tablet, and mobile devices
 - **Smooth Animations**: Engaging transitions and hover effects
 
@@ -17,11 +18,31 @@ A modern, responsive e-commerce website inspired by the Ray-Ban Meta Glasses off
 - CSS3 (with CSS Grid and Flexbox)
 - Vanilla JavaScript
 - Google Fonts (Inter)
+- Supabase (Vector Database & Edge Functions)
+- OpenAI API (GPT-4o-mini & Embeddings)
 
 ## Getting Started
 
-1. Open `index.html` in your web browser
-2. No build process or dependencies required - it's ready to use!
+1. **Set up Supabase Edge Function Environment Variables:**
+   - Go to your Supabase project dashboard
+   - Navigate to Edge Functions → chatbot
+   - Add the following environment variables:
+     - `OPENAI_API_KEY`: Your OpenAI API key
+     - `SUPABASE_URL`: Your Supabase project URL (automatically set)
+     - `SUPABASE_SERVICE_ROLE_KEY`: Your Supabase service role key
+
+2. **Open `index.html` in your web browser**
+   - The chatbot widget will appear in the bottom-right corner
+   - Click the contact button in the header to open the chatbot
+
+## Chatbot Setup
+
+The chatbot uses:
+- **Vector Search**: Supabase pgvector for semantic search in the `ray_chat` table
+- **OpenAI Embeddings**: `text-embedding-3-large` (3072 dimensions) for query embeddings
+- **OpenAI Chat**: `gpt-4o-mini` for generating responses with context
+
+The knowledge base is stored in the `ray_chat` table in Supabase with vectorized embeddings.
 
 ## Project Structure
 
