@@ -848,11 +848,27 @@ body {
     }
 }
 
+/* ElevenLabs Widgets */
+elevenlabs-convai.top-right-widget {
+    display: none !important;
+}
+
+elevenlabs-convai.top-right-widget.show-widget {
+    display: block !important;
+    position: fixed !important;
+    top: 80px !important;
+    right: 100px !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 9999 !important;
+    overflow: visible !important;
+}
+
 /* Chatbot Toggle Button */
 .chatbot-toggle-btn {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 380px; /* Position to the left of ElevenLabs widget */
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -898,7 +914,7 @@ body {
 .chatbot-widget {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 380px; /* Position to the left of ElevenLabs widget */
     width: 380px;
     max-height: 600px;
     background: var(--primary-dark);
@@ -1219,6 +1235,18 @@ body {
     
     .chatbot-messages {
         max-height: calc(100vh - 200px);
+    }
+}
+
+/* Adjust positioning when ElevenLabs widget is visible */
+@media (min-width: 769px) {
+    /* When ElevenLabs widget might be visible, ensure chatbot is positioned correctly */
+    .chatbot-toggle-btn {
+        right: 380px; /* Leave space for ElevenLabs widget (~360px) + gap */
+    }
+    
+    .chatbot-widget {
+        right: 380px;
     }
 }
 

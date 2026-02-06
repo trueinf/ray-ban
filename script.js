@@ -6,7 +6,10 @@ let conversationHistory = [];
 const SUPABASE_URL = 'https://lfnnavbdsxmrxsjimkwq.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxmbm5hdmJkc3htcnhzamlta3dxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM1MzMyMTgsImV4cCI6MjA1OTEwOTIxOH0.QXdkwEbzZHw8wiaQ80Rn00m8U2xIsUMpzP6iW0Hrccw';
 
-// Contact button functionality - opens chatbot
+// ElevenLabs widget functionality
+let widgetOpen = false;
+
+// Contact button functionality - opens chatbot OR ElevenLabs widget
 function setupContactButton() {
     const contactBtn = document.getElementById('contactBtn');
     const chatbotToggleBtn = document.getElementById('chatbotToggleBtn');
@@ -15,7 +18,43 @@ function setupContactButton() {
         contactBtn.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            toggleChatbot();
+            
+            // Check if ElevenLabs widget exists and toggle it
+            const topWidget = document.querySelector('elevenlabs-convai.top-right-widget');
+            if (topWidget) {
+                if (widgetOpen) {
+                    // Close the ElevenLabs widget
+                    topWidget.classList.remove('show-widget');
+                    topWidget.style.display = 'none';
+                    widgetOpen = false;
+                } else {
+                    // Show the ElevenLabs widget dialog
+                    topWidget.classList.add('show-widget');
+                    positionTopWidget();
+                    widgetOpen = true;
+                }
+            } else {
+                // Fallback to chatbot if ElevenLabs not available
+                toggleChatbot();
+            }
+        });
+        
+        // Close ElevenLabs widget when clicking outside
+        document.addEventListener('click', (e) => {
+            const topWidget = document.querySelector('elevenlabs-convai.top-right-widget');
+            const contactBtn = document.getElementById('contactBtn');
+            
+            if (!topWidget || !widgetOpen) return;
+            
+            // Check if click is outside both the widget and contact button
+            const clickedOnWidget = topWidget.contains(e.target);
+            const clickedOnContactBtn = contactBtn && contactBtn.contains(e.target);
+            
+            if (!clickedOnWidget && !clickedOnContactBtn) {
+                topWidget.classList.remove('show-widget');
+                topWidget.style.display = 'none';
+                widgetOpen = false;
+            }
         });
     }
     
@@ -25,6 +64,47 @@ function setupContactButton() {
             e.stopPropagation();
             toggleChatbot();
         });
+    }
+}
+
+// Position top-right ElevenLabs widget
+function positionTopWidget() {
+    const topWidget = document.querySelector('elevenlabs-convai.top-right-widget');
+    if (topWidget) {
+        topWidget.style.cssText = `
+            display: block !important;
+            position: fixed !important;
+            top: 80px !important;
+            right: 100px !important;
+            bottom: auto !important;
+            left: auto !important;
+            z-index: 9999 !important;
+            overflow: visible !important;
+        `;
+        
+        // Also try to style shadow DOM elements
+        const shadowRoot = topWidget.shadowRoot;
+        if (shadowRoot) {
+            // Check if style already added
+            if (!shadowRoot.querySelector('#custom-position-style')) {
+                const styleEl = document.createElement('style');
+                styleEl.id = 'custom-position-style';
+                styleEl.textContent = `
+                    :host {
+                        position: fixed !important;
+                        top: 80px !important;
+                        right: 100px !important;
+                        bottom: auto !important;
+                        left: auto !important;
+                        overflow: visible !important;
+                    }
+                    div, * {
+                        overflow: visible !important;
+                    }
+                `;
+                shadowRoot.appendChild(styleEl);
+            }
+        }
     }
 }
 
